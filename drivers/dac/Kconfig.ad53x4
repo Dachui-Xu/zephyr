@@ -1,0 +1,24 @@
+# DAC configuration options
+
+# SPDX-FileCopyrightText: Copyright The Zephyr Project Contributors
+# SPDX-License-Identifier: Apache-2.0
+
+config DAC_AD53X4
+	bool "Analog Devices AD53x4 DAC driver"
+	default y
+	select SPI
+	depends on DT_HAS_ADI_AD5304_ENABLED \
+		|| DT_HAS_ADI_AD5314_ENABLED \
+		|| DT_HAS_ADI_AD5324_ENABLED
+	help
+	  Enable the driver for the Analog Devices AD53x4 DAC family.
+
+if DAC_AD53X4
+
+config DAC_AD53X4_INIT_PRIORITY
+	int "Init priority"
+	default 80
+	help
+	  Analog Devices AD53x4 DAC device driver initialization priority.
+
+endif # DAC_AD53X4

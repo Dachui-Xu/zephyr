@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: Copyright The Zephyr Project Contributors
+# SPDX-License-Identifier: Apache-2.0
+
+description: Analog Devices 12-bit, 4-channel SPI DAC
+
+compatible: "adi,ad5324"
+
+include: adi,ad53x4-base.yaml
