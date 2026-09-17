@@ -381,6 +381,38 @@
 				spi-max-frequency = <0>;
 				#io-channel-cells = <1>;
 			};
+
+			test_spi_ad5304: ad5304@1b {
+				compatible = "adi,ad5304";
+				reg = <0x1b>;
+				spi-max-frequency = <0>;
+				spi-cpha;
+				#io-channel-cells = <1>;
+			};
+
+			test_spi_ad5314: ad5314@1c {
+				compatible = "adi,ad5314";
+				reg = <0x1c>;
+				spi-max-frequency = <0>;
+				spi-cpol;
+				#io-channel-cells = <1>;
+			};
+
+			test_spi_ad5324: ad5324@1d {
+				compatible = "adi,ad5324";
+				reg = <0x1d>;
+				spi-max-frequency = <0>;
+				spi-cpol;
+				#io-channel-cells = <1>;
+			};
+
+			test_spi_ms5314: ms5314@1e {
+				compatible = "relmon,ms5314", "adi,ad5314";
+				reg = <0x1e>;
+				spi-max-frequency = <0>;
+				spi-cpol;
+				#io-channel-cells = <1>;
+			};
 		};
 	};
 };

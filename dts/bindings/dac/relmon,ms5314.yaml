@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: Copyright The Zephyr Project Contributors
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+  Relmon MS5314 10-bit, 4-channel SPI DAC.
+
+  The published timing diagram shows the clock idle high and data sampled on
+  the falling edge. Requiring spi-cpol is a conservative constraint based on
+  that diagram; it does not assert that SPI mode 1 is incompatible.
+
+  List "adi,ad5314" after this compatible to use the AD53x4 driver, as in:
+    compatible = "relmon,ms5314", "adi,ad5314";
+
+compatible: "relmon,ms5314"
+
+include: adi,ad53x4-base.yaml
+
+properties:
+  spi-cpol:
+    required: true
